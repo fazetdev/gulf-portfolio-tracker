@@ -1,0 +1,116 @@
+.prompt-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 15px;
+  transition: all 0.2s;
+}
+
+.prompt-item:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.prompt-content {
+  flex: 1;
+}
+
+.prompt-question, .prompt-answer {
+  margin-bottom: 15px;
+}
+
+.prompt-question strong, .prompt-answer strong {
+  color: #0f172a;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.prompt-question p, .prompt-answer p {
+  margin: 0;
+  color: #475569;
+  line-height: 1.6;
+  padding: 10px;
+  background: #f8fafc;
+  border-radius: 6px;
+  border-left: 3px solid #3b82f6;
+}
+
+.prompt-answer p {
+  border-left-color: #10b981;
+}
+
+.prompt-meta {
+  display: flex;
+  gap: 15px;
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-top: 15px;
+}
+
+.prompt-date, .prompt-project, .prompt-category {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.prompt-form {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.prompt-textarea, .response-textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.prompt-textarea {
+  min-height: 100px;
+}
+
+.response-textarea {
+  min-height: 120px;
+}
+
+.prompt-textarea:focus, .response-textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.save-prompt-btn {
+  padding: 12px 24px;
+  background: #8b5cf6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.save-prompt-btn:hover {
+  background: #7c3aed;
+}

@@ -1,0 +1,400 @@
+.project-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.project-header {
+  color: white;
+  padding: 40px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.project-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.project-content {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.section h2 {
+  font-size: 1.5rem;
+  color: #0f172a;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.feature-item input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.feature-item span {
+  flex: 1;
+  color: #475569;
+  font-size: 1rem;
+}
+
+.feature-item span.completed {
+  text-decoration: line-through;
+  color: #94a3b8;
+}
+
+.progress-section {
+  background: #f8fafc;
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+.progress-bar {
+  height: 12px;
+  background: #e2e8f0;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.3s ease;
+}
+
+.progress-controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.progress-controls input[type="range"] {
+  flex: 1;
+  height: 8px;
+  border-radius: 4px;
+  background: #e2e8f0;
+  outline: none;
+}
+
+.progress-controls span {
+  font-weight: 600;
+  color: #0f172a;
+  min-width: 50px;
+}
+
+.notes-input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  resize: vertical;
+  min-height: 120px;
+  margin-bottom: 15px;
+}
+
+.notes-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.save-btn {
+  padding: 12px 24px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.save-btn:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .project-page {
+    padding: 20px 15px;
+  }
+  
+  .project-header {
+    padding: 30px 20px;
+  }
+  
+  .project-header h1 {
+    font-size: 2rem;
+  }
+  
+  .progress-controls {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Feature details */
+.feature-details {
+  flex: 1;
+}
+
+.feature-subitems {
+  margin-top: 10px;
+  padding-left: 25px;
+}
+
+.feature-subitems small {
+  display: block;
+  color: #64748b;
+  margin-bottom: 5px;
+  line-height: 1.4;
+}
+
+/* Quick notes grid */
+.quick-notes-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.quick-note-tag {
+  background: #f0f9ff;
+  color: #0369a1;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  border: 1px solid #bae6fd;
+}
+
+/* Category progress bars */
+.category-progress {
+  margin-top: 30px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+.category-progress h3 {
+  margin-bottom: 20px;
+  color: #0f172a;
+}
+
+.category-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.category-bar {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.category-label {
+  min-width: 150px;
+  color: #475569;
+  font-weight: 500;
+}
+
+.bar-container {
+  flex: 1;
+  height: 10px;
+  background: #e2e8f0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  background: #7c3aed;
+  border-radius: 5px;
+  transition: width 0.5s ease;
+}
+
+.category-percent {
+  min-width: 50px;
+  font-weight: 600;
+  color: #0f172a;
+  text-align: right;
+}
+
+/* Next steps ordered list */
+.next-steps {
+  margin-top: 30px;
+  padding: 25px;
+  background: #f0f9ff;
+  border-radius: 10px;
+  border: 1px solid #bae6fd;
+}
+
+.next-steps h3 {
+  color: #0369a1;
+  margin-bottom: 15px;
+}
+
+.next-steps ol {
+  padding-left: 20px;
+  color: #475569;
+}
+
+.next-steps li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.next-steps strong {
+  color: #0f172a;
+}
+
+.section-description {
+  color: #64748b;
+  font-style: italic;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* Prayer times box */
+.prayer-times-box {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f0f9ff;
+  border-radius: 8px;
+  border: 1px solid #bae6fd;
+}
+
+.prayer-times-box h4 {
+  margin-bottom: 10px;
+  color: #0369a1;
+}
+
+.prayer-times-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.prayer-time {
+  background: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+}
+
+/* Service table */
+.service-table {
+  margin-top: 10px;
+  overflow-x: auto;
+}
+
+.service-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.service-table th {
+  background: #f8fafc;
+  padding: 10px;
+  text-align: left;
+  color: #475569;
+  font-weight: 600;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.service-table td {
+  padding: 10px;
+  border-bottom: 1px solid #e2e8f0;
+  color: #475569;
+}
+
+.service-table tr:hover {
+  background: #f8fafc;
+}
+
+.profitability-high {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.profitability-medium {
+  color: #f59e0b;
+  font-weight: 600;
+}
+
+.profitability-low {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+.highlight {
+  margin-top: 20px;
+  padding: 15px;
+  background: #fef3c7;
+  border-radius: 8px;
+  border: 1px solid #fcd34d;
+  color: #92400e;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+/* Category bar colors */
+.bar-fill[style*="background-color: #10b981"] {
+  background-color: #10b981 !important;
+}
+
+.bar-fill[style*="background-color: #8b5cf6"] {
+  background-color: #8b5cf6 !important;
+}
+
+.section-sub {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.section-sub h3 {
+  margin-bottom: 15px;
+  color: #0f172a;
+  font-size: 1.3rem;
+}
