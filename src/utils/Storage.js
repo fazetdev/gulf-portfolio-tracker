@@ -1,5 +1,3 @@
-// Simple localStorage utility for saving notes and prompts
-
 const STORAGE_KEYS = {
   NOTES: 'gulf_portfolio_notes',
   PROMPTS: 'gulf_portfolio_prompts',
@@ -7,12 +5,13 @@ const STORAGE_KEYS = {
 };
 
 export const Storage = {
-  // Notes
+  // ===== Notes =====
   saveNote: (note) => {
     const notes = Storage.getNotes();
-    notes.push(note);
+    const newNote = { ...note, id: Date.now() };
+    notes.push(newNote);
     localStorage.setItem(STORAGE_KEYS.NOTES, JSON.stringify(notes));
-    return note;
+    return newNote;
   },
 
   getNotes: () => {
@@ -29,12 +28,13 @@ export const Storage = {
     return Storage.getNotes().filter(note => note.project === project);
   },
 
-  // Prompts
+  // ===== Prompts =====
   savePrompt: (prompt) => {
     const prompts = Storage.getPrompts();
-    prompts.push(prompt);
+    const newPrompt = { ...prompt, id: Date.now() };
+    prompts.push(newPrompt);
     localStorage.setItem(STORAGE_KEYS.PROMPTS, JSON.stringify(prompts));
-    return prompt;
+    return newPrompt;
   },
 
   getPrompts: () => {
@@ -49,5 +49,28 @@ export const Storage = {
 
   getPromptsByProject: (project) => {
     return Storage.getPrompts().filter(prompt => prompt.project === project);
+  },
+
+  // ===== Milestones =====
+  saveMilestone: (milestone) => {
+    const milestones = Storage.getMilestones();
+    const newMilestone = { ...milestone, id: Date.now() };
+    milestones.push(newMilestone);
+    localStorage.setItem(STORAGE_KEYS.MILESTONES, JSON.stringify(milestones));
+    return newMilestone;
+  },
+
+  getMilestones: () => {
+    const milestones = localStorage.getItem(STORAGE_KEYS.MILESTONES);
+    return milestones ? JSON.parse(milestones) : [];
+  },
+
+  deleteMilestone: (milestoneId) => {
+    const milestones = Storage.getMilestones().filter(m => m.id !== milestoneId);
+    localStorage.setItem(STORAGE_KEYS.MILESTONES, JSON.stringify(milestones));
+  },
+
+  getMilestonesByProject: (project) => {
+    return Storage.getMilestones().filter(m => m.project === project);
   }
 };
