@@ -4,9 +4,8 @@ import NoteItem from '../components/Notes/NoteItem';
 import PromptForm from '../components/Prompts/PromptForm';
 import PromptItem from '../components/Prompts/PromptItem';
 import { Storage } from '../utils/Storage';
-import './ProjectPage.css';
 
-function TawasulAIPage() {
+function TawasulAIPage({ onBack }) {
   const [activeTab, setActiveTab] = useState('features');
   const [notes, setNotes] = useState([]);
   const [prompts, setPrompts] = useState([]);
@@ -75,7 +74,6 @@ function TawasulAIPage() {
       <header className="project-header" style={{ backgroundColor: '#0d9488' }}>
         <h1>🤖 Tawasul AI</h1>
         <p className="tagline">"The Bilingual Inbox That Saves 10 Hours Weekly"</p>
-
         <p className="project-description">
           AI-powered communication assistant for Gulf businesses. Unified inbox across WhatsApp, 
           Instagram, Email with bilingual (Arabic-English) AI replies.
@@ -104,21 +102,18 @@ function TawasulAIPage() {
         >
           🎯 Features
         </button>
-
         <button 
           className={`tab ${activeTab === 'notes' ? 'active' : ''}`}
           onClick={() => setActiveTab('notes')}
         >
           📝 Notes ({notes.length})
         </button>
-
         <button 
           className={`tab ${activeTab === 'prompts' ? 'active' : ''}`}
           onClick={() => setActiveTab('prompts')}
         >
           🤖 AI Prompts ({prompts.length})
         </button>
-
         <button 
           className={`tab ${activeTab === 'progress' ? 'active' : ''}`}
           onClick={() => setActiveTab('progress')}
@@ -131,7 +126,6 @@ function TawasulAIPage() {
         {activeTab === 'features' && (
           <div className="section">
             <h2>🎯 Core Features</h2>
-
             <div className="features-list">
               {features.map(feature => (
                 <div key={feature.id} className="feature-item">
@@ -146,30 +140,17 @@ function TawasulAIPage() {
                 </div>
               ))}
             </div>
-
-            <div className="feature-categories">
-              <h3>🔥 Key Impact Features:</h3>
-              <ul>
-                <li><strong>Unified Inbox:</strong> All channels in one place</li>
-                <li><strong>Bilingual AI Replies:</strong> Arabic/English generation</li>
-                <li><strong>Canned Responses:</strong> Gulf-specific templates</li>
-                <li><strong>CRM Sidebar:</strong> Contact history & notes</li>
-                <li><strong>Smart Filters:</strong> Hot leads, needs follow-up</li>
-              </ul>
-            </div>
           </div>
         )}
 
         {activeTab === 'notes' && (
           <div className="section">
             <h2>📝 Project Notes</h2>
-
             <NoteForm 
               project="tawasul-ai"
               category="general"
               onSave={handleSaveNote}
             />
-
             <div className="notes-list">
               {notes.length > 0 ? (
                 notes.map(note => (
@@ -189,13 +170,11 @@ function TawasulAIPage() {
         {activeTab === 'prompts' && (
           <div className="section">
             <h2>🤖 AI Prompts</h2>
-
             <PromptForm 
               project="tawasul-ai"
               category="general"
               onSave={handleSavePrompt}
             />
-
             <div className="prompts-list">
               {prompts.length > 0 ? (
                 prompts.map(prompt => (
@@ -215,37 +194,28 @@ function TawasulAIPage() {
         {activeTab === 'progress' && (
           <div className="section">
             <h2>📊 Project Progress</h2>
-
-            <div className="progress-section">
-              <div className="progress-info">
-
-                <div className="progress-stats">
-                  <div className="progress-stat">
-                    <span className="stat-label">Features Completed:</span>
-                    <span className="stat-value">{completedCount}/{totalFeatures}</span>
-                  </div>
-
-                  <div className="progress-stat">
-                    <span className="stat-label">Completion:</span>
-                    <span className="stat-value">
-                      {Math.round((completedCount / totalFeatures) * 100)}%
-                    </span>
-                  </div>
+            <div className="progress-info">
+              <div className="progress-stats">
+                <div className="progress-stat">
+                  <span className="stat-label">Features Completed:</span>
+                  <span className="stat-value">{completedCount}/{totalFeatures}</span>
                 </div>
-
-                <div className="progress-bar-container">
-                  <div className="progress-bar">
-                    <div 
-                      className="progress-fill" 
-                      style={{ 
-                        width: \`\${(completedCount / totalFeatures) * 100}%\`,
-                        backgroundColor: '#0d9488'
-                      }}
-                    ></div>
-                  </div>
+                <div className="progress-stat">
+                  <span className="stat-label">Completion:</span>
+                  <span className="stat-value">{Math.round((completedCount / totalFeatures) * 100)}%</span>
                 </div>
               </div>
-
+              <div className="progress-bar-container">
+                <div className="progress-bar">
+                  <div
+                    className="progress-fill"
+                    style={{
+                      width: ((completedCount / totalFeatures) * 100) + '%',
+                      backgroundColor: '#0d9488'
+                    }}
+                  ></div>
+                </div>
+              </div>
               <div className="next-steps">
                 <h3>Next Steps:</h3>
                 <ul>
@@ -255,7 +225,6 @@ function TawasulAIPage() {
                   <li>Create smart inbox filters</li>
                 </ul>
               </div>
-
             </div>
           </div>
         )}
